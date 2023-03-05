@@ -135,7 +135,6 @@ PRODUCT_PACKAGES += \
     LineageSettingsProvider \
     LineageSetupWizard \
     ExactCalculator \
-    Jelly \
     LockClock \
     Updater \
     WallpaperPicker \
