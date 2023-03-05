@@ -10,9 +10,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Device will work without sim card : true or false
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     keyguard.no_require_sim=true
 
+# SELINUX
+#     0 = Permissive, 1 = Enforcing
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1
 
@@ -21,7 +24,19 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.notification_sound=Argon.ogg \
     ro.config.alarm_alert=Hassium.ogg
 
-# Thank you, please drive thru!
+# Allow override of DUN settings
+#
+#     Allow you to bypass mobile tethering data caps
+#     Essentially, the telcos are relying on your phone telling
+#     them traffic is from tethering by using a separate
+#     communication means (dun = dial-up networking) for tethering traffic.
+#
+#     Allow override of system DUN settings by setting
+#     persist.sys.dun.override
+#     to one of the following values:
+#     2 = not set, 0 = DUN not required, 1 = DUN required
+#     If the prop is not set or is set to an invalid value the system setting
+#     will be used.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
