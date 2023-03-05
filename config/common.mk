@@ -67,11 +67,9 @@ PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/lineage/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
-endif
 
 # Copy all Lineage-specific init rc files
 $(foreach f,$(wildcard vendor/lineage/prebuilt/common/etc/init/*.rc),\
