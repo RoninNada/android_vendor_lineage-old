@@ -136,7 +136,6 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard \
     ExactCalculator \
     LockClock \
-    Updater \
     WallpaperPicker \
     WeatherProvider
 
